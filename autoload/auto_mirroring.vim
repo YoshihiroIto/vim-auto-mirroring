@@ -120,3 +120,4 @@ function! s:has_vimproc()
     return s:exists_vimproc
 endfunction
 
+" vim: set ts=2 sw=2 sts=2 et :
