@@ -109,15 +109,15 @@ function! s:remove_dir(path)
 endfunction
 
 function! s:has_vimproc()
-    if !exists('s:exists_vimproc')
-        try
-            silent call vimproc#version()
-            let s:exists_vimproc = 1
-        catch
-            let s:exists_vimproc = 0
-        endtry
-    endif
-    return s:exists_vimproc
+  if !exists('s:exists_vimproc')
+    try
+      silent call vimproc#version()
+      let s:exists_vimproc = 1
+    catch
+      let s:exists_vimproc = 0
+    endtry
+  endif
+  return s:exists_vimproc
 endfunction
 
 " vim: set ts=2 sw=2 sts=2 et :
