@@ -26,7 +26,7 @@ let g:auto_mirroring_dir         = get(g:, 'auto_mirroring_dir',         expand(
 let g:auto_mirroring_max_history = get(g:, 'auto_mirroring_max_history', 7)
 
 let s:is_windows = has('win32') || has('win64')
-let s:is_mac     = has('mac')
+let s:is_unix    = has('unix')
 
 let s:is_first_mirroring = 1
 
@@ -86,7 +86,7 @@ function! s:copy_file(sourceFilepath, targetFilepath)
 
   if s:is_windows
     call vimproc#system_bg('copy ' . esource . ' ' . etarget)
-  elseif s:is_mac
+  elseif s:is_unix
     call vimproc#system_bg('cp ' . esource . ' ' . etarget)
   else
     echo 'auto_mirroring.copy_file : Not supported.'
@@ -100,7 +100,7 @@ function! s:remove_dir(path)
   if isdirectory(a:path)
     if s:is_windows
       call vimproc#system_bg('rd /S /Q ' . epath)
-    elseif s:is_mac
+    elseif s:is_unix
       call vimproc#system_bg('rm -rf ' . epath)
     else
       echo 'auto_mirroring.remove_dir : Not supported.'
