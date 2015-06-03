@@ -22,7 +22,7 @@
 "     SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 " }}}
 "=============================================================================
-let g:auto_mirroring_dir         = get(g:, 'auto_mirroring_dir',         expand('$DOTVIM/mirror'))
+let g:auto_mirroring_dir         = get(g:, 'auto_mirroring_dir',         expand('~/.vim/mirror'))
 let g:auto_mirroring_max_history = get(g:, 'auto_mirroring_max_history', 7)
 
 let s:is_windows = has('win32') || has('win64')
